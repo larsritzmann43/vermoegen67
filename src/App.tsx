@@ -181,10 +181,13 @@ function App() {
 
         {/* Right Column: Chart & Results */}
         <div className="lg:col-span-8 bg-white p-8 rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col h-[674px]">
-          <div>
-            <h3 className="text-center text-sm font-bold text-[#1a1a1a] mb-8 uppercase tracking-widest">Vermögen aufbauen</h3>
+          <div className="flex-grow flex flex-col">
+            <h3 className="text-center text-sm font-bold text-[#1a1a1a] mb-2 uppercase tracking-widest">Beispielrechnung für den Vermögensaufbau</h3>
+            <p className="text-center text-[10px] text-gray-500 mb-8 leading-relaxed">
+              Die Berechnung zeigt das angesparte Kapital bis zum 67. Lebensjahr. Die Berechnung geht von einer jährlichen Wertentwicklung von 6% netto aus. Es liegt kein konkretes Finanzprodukt zu Grunde.
+            </p>
 
-            <div className="h-[362px] w-full">
+            <div className="flex-grow w-full min-h-[200px]">
               <ResponsiveContainer width="100%" height="100%">
                 <AreaChart
                   data={data}
@@ -237,8 +240,8 @@ function App() {
           </div>
 
           {/* Milestones */}
-          <div className="mt-12">
-            <h4 className="text-center text-gray-500 text-xs uppercase tracking-widest mb-4 font-semibold">Depotwert im Alter von ...</h4>
+          <div className="mt-auto pt-6">
+            <h4 className="text-center text-gray-500 text-xs uppercase tracking-widest mb-4 font-semibold">Vermögenswert im Alter von ...</h4>
             <div className="grid grid-cols-4 gap-4">
               {[
                 { age: 18, val: milestones.at18 },
@@ -256,9 +259,6 @@ function App() {
                 </div>
               ))}
             </div>
-            <p className="text-center text-[10px] text-gray-400 mt-6">
-              Annahme: Depotwert bis zum Alter von 100 Jahren aufgebraucht, Wertentwicklung netto 6%.
-            </p>
           </div>
         </div>
       </div>
